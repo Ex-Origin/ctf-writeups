@@ -32,9 +32,9 @@ except Exception as e:
 context.arch = "amd64"
 # context.log_level = 'debug'
 execve_file = './restaurant'
-# sh = process(execve_file, env={"LD_PRELOAD": "/tmp/gdb_symbols.so"})
+sh = process(execve_file, env={"LD_PRELOAD": "/tmp/gdb_symbols.so"})
 # sh = process(execve_file)
-sh = remote('eonew.cn', 60106)
+# sh = remote('eonew.cn', 60106)
 elf = ELF(execve_file)
 libc = ELF('./libc-2.27.so')
 # libc = ELF('/lib/x86_64-linux-gnu/libc.so.6')
